@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Retoques do Lima — Fotografia</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="hamburger-container" aria-label="menu">
+      <div class="hamburger" role="button" aria-label="Abrir menu">☰</div>
+      <nav class="sidebar" aria-label="Navegação principal">
+        <a href="/retoques-do-lima/video-photo-website/public/Inicio/index.html">Início</a>
+        <a href="/retoques-do-lima/video-photo-website/public/Sobre/about.html">Sobre</a>
+        <a href="/retoques-do-lima/video-photo-website/public/Categorias/categorias.html">Serviços</a>
+        <a href="/retoques-do-lima/video-photo-website/public/Contactos/contacts.html">Contactos</a>
+      </nav>
+    </div>
+    <h1 class="site-title">Retoques do Lima</h1>
+  </header>
+
+  <main class="wrap gallery-page">
+    <section class="gallery-grid" aria-label="Galeria de Fotografias">
+      <div class="gallery-item" data-src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1600">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=60&auto=format&fit=crop" alt="Paisagem montanhosa ao pôr do sol">
+      </div>
+      <div class="gallery-item" data-src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1600">
+        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=60&auto=format&fit=crop" alt="Natureza selvagem">
+      </div>
+      <div class="gallery-item" data-src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600">
+        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=60&auto=format&fit=crop" alt="Floresta tropical">
+      </div>
+      <div class="gallery-item" data-src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=1600">
+        <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=800&q=60&auto=format&fit=crop" alt="Costa marítima">
+      </div>
+      <div class="gallery-item" data-src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=1600">
+        <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=800&q=60&auto=format&fit=crop" alt="Montanhas cobertas de neve">
+      </div>
+      <div class="gallery-item" data-src="https://images.unsplash.com/photo-1481277542470-605612bd2d61?w=1600">
+        <img src="https://images.unsplash.com/photo-1481277542470-605612bd2d61?w=800&q=60&auto=format&fit=crop" alt="Lago sereno">
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">×</span>
+    <span class="lightbox-nav lightbox-prev" id="lightbox-prev">‹</span>
+    <div class="lightbox-content">
+      <img src="" alt="Imagem ampliada" id="lightbox-img">
+    </div>
+    <span class="lightbox-nav lightbox-next" id="lightbox-next">›</span>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© <span id="ano">2025</span> Retoques do Lima — Fotografia</p>
+      <p class="small">Clique nas imagens para visualizar em tamanho grande</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
