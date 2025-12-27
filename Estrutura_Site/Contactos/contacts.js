@@ -4,7 +4,10 @@
 
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
-const submitBtn = contactForm.querySelector('.submit-btn');
+let submitBtn = null;
+if (contactForm) {
+  submitBtn = contactForm.querySelector('.submit-btn');
+}
 
 // Validação de email
 function isValidEmail(email) {
@@ -39,7 +42,8 @@ function clearForm() {
 }
 
 // Enviar formulário
-contactForm.addEventListener('submit', async (e) => {
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   
   // Obter valores dos campos
@@ -97,50 +101,61 @@ contactForm.addEventListener('submit', async (e) => {
     
   } finally {
     // Remover loading
-    submitBtn.classList.remove('loading');
-    submitBtn.disabled = false;
+    if (submitBtn) {
+      submitBtn.classList.remove('loading');
+      submitBtn.disabled = false;
+    }
   }
-});
+  });
+}
 
 // Validação em tempo real
-document.getElementById('email').addEventListener('blur', function() {
-  if (this.value && !isValidEmail(this.value)) {
-    this.style.borderColor = '#e74c3c';
-  } else {
-    this.style.borderColor = '#e0e0e0';
-  }
-});
+// Validação em tempo real (protegida)
+const emailInput = document.getElementById('email');
+const phoneInput = document.getElementById('phone');
 
-document.getElementById('phone').addEventListener('blur', function() {
-  if (this.value && !isValidPhone(this.value)) {
-    this.style.borderColor = '#e74c3c';
-  } else {
-    this.style.borderColor = '#e0e0e0';
-  }
-});
+if (emailInput) {
+  emailInput.addEventListener('blur', function() {
+    if (this.value && !isValidEmail(this.value)) {
+      this.style.borderColor = '#e74c3c';
+    } else {
+      this.style.borderColor = '#e0e0e0';
+    }
+  });
+}
 
-// Formatar telefone automaticamente
-document.getElementById('phone').addEventListener('input', function(e) {
-  let value = e.target.value.replace(/\D/g, '');
-  
-  // Adiciona +351 se começar com 9
-  if (value.startsWith('9') && value.length === 9) {
-    value = '351' + value;
-  }
-  
-  // Formata: +351 912 345 678
-  if (value.length > 3) {
-    value = '+' + value.slice(0, 3) + ' ' + value.slice(3);
-  }
-  if (value.length > 8) {
-    value = value.slice(0, 8) + ' ' + value.slice(8);
-  }
-  if (value.length > 12) {
-    value = value.slice(0, 12) + ' ' + value.slice(12);
-  }
-  
-  e.target.value = value.slice(0, 17); // Limita tamanho
-});
+if (phoneInput) {
+  phoneInput.addEventListener('blur', function() {
+    if (this.value && !isValidPhone(this.value)) {
+      this.style.borderColor = '#e74c3c';
+    } else {
+      this.style.borderColor = '#e0e0e0';
+    }
+  });
+
+  // Formatar telefone automaticamente
+  phoneInput.addEventListener('input', function(e) {
+    let value = e.target.value.replace(/\D/g, '');
+
+    // Adiciona +351 se começar com 9
+    if (value.startsWith('9') && value.length === 9) {
+      value = '351' + value;
+    }
+
+    // Formata: +351 912 345 678
+    if (value.length > 3) {
+      value = '+' + value.slice(0, 3) + ' ' + value.slice(3);
+    }
+    if (value.length > 8) {
+      value = value.slice(0, 8) + ' ' + value.slice(8);
+    }
+    if (value.length > 12) {
+      value = value.slice(0, 12) + ' ' + value.slice(12);
+    }
+
+    e.target.value = value.slice(0, 17); // Limita tamanho
+  });
+}
 
 
 // ========================================

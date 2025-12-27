@@ -4,9 +4,10 @@
   box-sizing: border-box;
 }
 
+/* Body com gradiente azul escuro -> claro */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0b1b3b 0%, #1f4c8f 50%, #6fa8ff 100%);
   min-height: 100vh;
   color: #333;
 }
@@ -70,7 +71,7 @@ body {
   color: #333;
   text-decoration: none;
   margin-bottom: 0.5rem;
-  border-radius: 8px;
+  border-radius: 0; /* cantos retos */
   transition: all 0.3s;
 }
 
@@ -98,7 +99,7 @@ body {
 .gallery-item {
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 0; /* cantos retos */
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   transition: transform 0.3s, box-shadow 0.3s;
@@ -181,7 +182,7 @@ body {
 .lightbox img {
   max-width: 100%;
   max-height: 85vh;
-  border-radius: 8px;
+  border-radius: 0; /* cantos retos na imagem grande */
   box-shadow: 0 0 50px rgba(255,255,255,0.3);
 }
 
@@ -195,7 +196,7 @@ body {
   background: rgba(0,0,0,0.5);
   width: 50px;
   height: 50px;
-  border-radius: 50%;
+  border-radius: 0; /* botão quadrado */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -217,7 +218,7 @@ body {
   background: rgba(0,0,0,0.5);
   width: 60px;
   height: 60px;
-  border-radius: 50%;
+  border-radius: 0; /* botões quadrados */
   display: flex;
   align-items: center;
   justify-content: center;

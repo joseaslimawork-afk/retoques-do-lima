@@ -39,57 +39,59 @@ const galleryItems = document.querySelectorAll('.gallery-item');
 
 let currentIndex = 0;
 
-// Abrir lightbox
-function openLightbox(index) {
-  currentIndex = index;
-  const item = galleryItems[index];
-  const imgSrc = item.getAttribute('data-src');
-  lightboxImg.src = imgSrc;
-  lightbox.classList.add('active');
-  document.body.style.overflow = 'hidden'; // Bloqueia scroll do body
+// Lightbox: só inicializa se existirem elementos na página
+if (lightbox && galleryItems && galleryItems.length > 0) {
+  // Abrir lightbox
+  function openLightbox(index) {
+    currentIndex = index;
+    const item = galleryItems[index];
+    const imgSrc = item.getAttribute('data-src') || item.src || '';
+    if (lightboxImg) lightboxImg.src = imgSrc;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Bloqueia scroll do body
+  }
+
+  // Fechar lightbox
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Restaura scroll
+  }
+
+  // Navegar para imagem anterior
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+    openLightbox(currentIndex);
+  }
+
+  // Navegar para próxima imagem
+  function showNext() {
+    currentIndex = (currentIndex + 1) % galleryItems.length;
+    openLightbox(currentIndex);
+  }
+
+  // Event listeners - Clique nas imagens da galeria
+  galleryItems.forEach((item, index) => {
+    item.addEventListener('click', () => openLightbox(index));
+  });
+
+  // Event listeners - Botões do lightbox (verifica existência)
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightboxPrev) lightboxPrev.addEventListener('click', showPrev);
+  if (lightboxNext) lightboxNext.addEventListener('click', showNext);
+
+  // Atalhos de teclado
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showPrev();
+    if (e.key === 'ArrowRight') showNext();
+  });
+
+  // Fechar ao clicar no fundo escuro
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
 }
-
-// Fechar lightbox
-function closeLightbox() {
-  lightbox.classList.remove('active');
-  document.body.style.overflow = 'auto'; // Restaura scroll
-}
-
-// Navegar para imagem anterior
-function showPrev() {
-  currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-  openLightbox(currentIndex);
-}
-
-// Navegar para próxima imagem
-function showNext() {
-  currentIndex = (currentIndex + 1) % galleryItems.length;
-  openLightbox(currentIndex);
-}
-
-// Event listeners - Clique nas imagens da galeria
-galleryItems.forEach((item, index) => {
-  item.addEventListener('click', () => openLightbox(index));
-});
-
-// Event listeners - Botões do lightbox
-lightboxClose.addEventListener('click', closeLightbox);
-lightboxPrev.addEventListener('click', showPrev);
-lightboxNext.addEventListener('click', showNext);
-
-// Atalhos de teclado
-document.addEventListener('keydown', (e) => {
-  if (!lightbox.classList.contains('active')) return;
-  
-  if (e.key === 'Escape') closeLightbox();
-  if (e.key === 'ArrowLeft') showPrev();
-  if (e.key === 'ArrowRight') showNext();
-});
-
-// Fechar ao clicar no fundo escuro
-lightbox.addEventListener('click', (e) => {
-  if (e.target === lightbox) closeLightbox();
-});
 
 
 // ========================================

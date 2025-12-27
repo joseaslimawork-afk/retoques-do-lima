@@ -1,15 +1,18 @@
+/* Reset global */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0b1b3b 0%, #1f4c8f 50%, #6fa8ff 100%);
   min-height: 100vh;
   color: #333;
 }
+
 
 /* Header */
 .site-header {
@@ -70,7 +73,7 @@ body {
   color: #333;
   text-decoration: none;
   margin-bottom: 0.5rem;
-  border-radius: 8px;
+  border-radius: 0; /* links retos */
   transition: all 0.3s;
 }
 
@@ -107,7 +110,7 @@ body {
 
 .download-card {
   background: rgba(255, 255, 255, 0.95);
-  border-radius: 16px;
+  border-radius: 0; /* retângulo reto */
   padding: 3rem;
   text-align: center;
   box-shadow: 0 8px 30px rgba(0,0,0,0.2);
@@ -154,7 +157,7 @@ body {
   border: none;
   padding: 1rem 3rem;
   font-size: 1.1rem;
-  border-radius: 50px;
+  border-radius: 0; /* botão reto */
   cursor: pointer;
   transition: all 0.3s;
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
@@ -185,15 +188,16 @@ body {
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
+/* 3 colunas em desktop */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
 .service-card {
   background: white;
-  border-radius: 12px;
+  border-radius: 0; /* retângulo reto */
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
   transition: transform 0.3s, box-shadow 0.3s;
@@ -288,7 +292,7 @@ body {
 /* CTA Section */
 .cta-section {
   background: rgba(255, 255, 255, 0.95);
-  border-radius: 12px;
+  border-radius: 0; /* retângulo reto */
   padding: 3rem;
   text-align: center;
   margin: 4rem 0;
@@ -313,7 +317,7 @@ body {
   color: white;
   padding: 1rem 2.5rem;
   text-decoration: none;
-  border-radius: 50px;
+  border-radius: 0; /* botão reto */
   font-size: 1.1rem;
   transition: all 0.3s;
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
@@ -344,7 +348,7 @@ body {
 /* Responsivo */
 @media (max-width: 768px) {
   .services-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* 1 coluna no mobile */
   }
 
   .download-card {
