@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Retoques do Lima — Fotografia</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="hamburger-container" aria-label="menu">
+      <div class="hamburger" role="button" aria-label="Abrir menu">☰</div>
+      <nav class="sidebar" aria-label="Navegação principal">
+        <a href="/Inicio/index.html">Início</a>
+        <a href="/Sobre/about.html">Sobre</a>
+        <a href="/Categorias/categorias.html">Serviços</a>
+        <a href="/Contactos/index.html">Contactos</a>
+      </nav>
+    </div>
+    <h1 class="site-title">Retoques do Lima</h1>
+  </header>
+
+  <main class="wrap gallery-page">
+    <section class="gallery-grid" aria-label="Galeria de Fotografias">
+      <div class="gallery-item" data-src="IMG_0044.jpg">
+        <img src="IMG_0044.jpg">
+      </div>
+      <div class="gallery-item" data-src="IMG_0351.jpg">
+        <img src="IMG_0351.jpg">
+      </div>
+      <div class="gallery-item" data-src="IMG_.jpg">
+        <img src="IMG_0538.jpg">
+      </div>
+      <div class="gallery-item" data-src="IMG_0566-2.jpg">
+        <img src="IMG_0566-2.jpg">
+      </div>
+      <div class="gallery-item" data-src="IMG_0858.jpg">
+        <img src="IMG_0858.jpg">
+      </div>
+      <div class="gallery-item" data-src="IMG_1381.jpg">
+        <img src="IMG_1381.jpg">
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">×</span>
+    <span class="lightbox-nav lightbox-prev" id="lightbox-prev">‹</span>
+    <div class="lightbox-content">
+      <img src="" alt="Imagem ampliada" id="lightbox-img">
+    </div>
+    <span class="lightbox-nav lightbox-next" id="lightbox-next">›</span>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© <span id="ano">2025</span> Retoques do Lima — Fotografia</p>
+      <p class="small">Clique nas imagens para visualizar em tamanho grande</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
