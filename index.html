@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site</title>
+    <title>Retoques do Lima - Audiovisuais</title>
     <style>
         * {
             margin: 0;
@@ -12,55 +12,25 @@
         }
 
         body {
-             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-             background: linear-gradient(135deg, #0b1b3b 0%, #1f4c8f 50%, #6fa8ff 100%);
-             min-height: 100vh;
-  
-             color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0b1b3b 0%, #1f4c8f 50%, #6fa8ff 100%);
+            min-height: 100vh;
+            color: #333;
             display: flex;
             flex-direction: column;
         }
 
         header {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
+            background: white;
+            padding: 1.5rem 2rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
         .logo {
-            color: white;
-            font-size: 1.5rem;
+            color: #1f4c8f;
+            font-size: 2rem;
             font-weight: bold;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-        }
-
-        .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
+            text-align: center;
         }
 
         main {
@@ -73,106 +43,48 @@
 
         .hero {
             text-align: center;
-            color: white;
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
         }
 
         .cta-btn {
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
             border: none;
-            border-radius: 50px;
+            border-radius: 8px;
             cursor: pointer;
             text-decoration: none;
             transition: all 0.3s ease;
             font-weight: 600;
-        }
-
-        .btn-primary {
             background: white;
-            color: #667eea;
+            color: #1f4c8f;
+            display: inline-block;
         }
 
-        .btn-primary:hover {
+        .cta-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-3px);
-        }
-
-        footer {
-            background: rgba(0, 0, 0, 0.2);
-            color: white;
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: auto;
-        }
-
         @media (max-width: 768px) {
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
+            .logo {
+                font-size: 1.5rem;
             }
 
             .cta-btn {
-                width: 200px;
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
             }
         }
     </style>
-
+</head>
+<body>
+    <header>
+        <div class="logo">Retoques do Lima - Audiovisuais</div>
+    </header>
 
     <main>
         <div class="hero">
-            <h1>Bem-vindo ao Meu Site</h1>
-            <p>Explore nosso conteúdo e descubra tudo o que temos para oferecer</p>
-            <div class="cta-buttons">
-                <a href="index inicio.html" class="cta-btn btn-primary">Começar</a>
-            </div>
+            <a href="#" class="cta-btn">Entrar</a>
         </div>
     </main>
-
-    <footer>
-        <p>&copy; 2025 MeuSite. Todos os direitos reservados.</p>
-    </footer>
 </body>
 </html>
